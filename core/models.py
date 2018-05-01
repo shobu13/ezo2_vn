@@ -20,6 +20,7 @@ class Projet(models.Model):
     codeur = models.ManyToManyField('Membre', verbose_name="Codeur(s)",
                                     related_name="codeur", blank=True)
     etat = models.BooleanField(verbose_name="Terminé ?", default=False)
+    phare = models.BooleanField(verbose_name="Projet Phare ?", default=False)
 
     def __str__(self):
         return self.nom
