@@ -5,6 +5,25 @@
     <title>ezo2 - Visual Novel</title>
 </head>
 <body>
-    hello world
+{{ chef }}
+<hr/>
+{% for membre in graphistes %}
+    {{ membre.pseudo }}
+{% empty %}
+    pas de graphiste sur ce projet ? On recrute !
+{% endfor %}
+<hr/>
+{% for membre in musiciens %}
+    {{ membre.pseudo }}
+{% empty %}
+    pas de musicien sur ce projet ? On recrute !
+{% endfor %}
+<hr/>
+{% for membre in codeurs %}
+    {{ membre.pseudo }}
+{% empty %}
+    pas de codeur sur ce projet ? On recrute !
+{% endfor %}
+
 </body>
 </html>
