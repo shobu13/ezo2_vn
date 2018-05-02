@@ -7,7 +7,7 @@ from core.models import Projet, Membre
 class ProjetAdmin(admin.ModelAdmin):
 
     list_display = ('nom', 'chef', 'etat')
-    list_filter = ('chef', 'etat')
+    list_filter = ('chef', 'etat', 'phare')
     search_fields = ('nom', )
     ordering = ('nom', )
     prepopulated_fields = {'slug': ('nom',), }
