@@ -66,86 +66,92 @@
 
 <div id="phare" class="col s12">
     <div class="container">
-        <div class="row">
-            <div class="col s8 offset-s2">
+
+        <div class="card">
+            <div class="card-image">
                 <img src="{{ projet_phare.header.url }}" class="responsive-img">
             </div>
-        </div>
-        <div class="row">
-            <div class="col s12">
-                {{ projet_phare.description|markdownify|safe }}
+            <div class="card-tabs">
+                <ul class="tabs tabs-fixed-width">
+                    <li class="tab"><a href="#desc" class="active">Description</a></li>
+                    <li class="tab"><a href="#chef">Chef de projet</a></li>
+                    <li class="tab"><a href="#graph">Graphistes</a></li>
+                    <li class="tab"><a href="#music">Musiciens</a></li>
+                    <li class="tab"><a href="#code">Codeurs</a></li>
+                </ul>
             </div>
-        </div>
-        {#    Chef de projet #}
-        <div class="row">
-            <div class="col s2">
-                Chef du Projet :
-            </div>
-        </div>
-        <div class="row">
-            <div class="col s4 offset-s2">
-                {{ projet_phare.chef.pseudo }}
-            </div>
-        </div>
-        {# Graphistes #}
-        <div class="row">
-            <div class="col s2">
-                Graphistes :
-            </div>
-        </div>
-        {% for membre in graphistes %}
-            <div class="row">
-                <div class="col s4 offset-s2">
-                    {{ membre.pseudo }}
+            <div class="card-content grey lighten-4">
+                <div id="desc">
+                    {{ projet_phare.description }}
+                </div>
+                <div id="chef">
+                    {{ projet_phare.chef }}
+                </div>
+                <div id="graph">
+                    {# Graphistes #}
+                    <div class="row">
+                        <div class="col s2">
+                            Graphistes :
+                        </div>
+                    </div>
+                    {% for membre in graphistes %}
+                        <div class="row">
+                            <div class="col s4 offset-s2">
+                                {{ membre.pseudo }}
+                            </div>
+                        </div>
+                    {% empty %}
+                        <div class="row">
+                            <div class="col s4 offset-s2">
+                                pas de graphiste sur ce projet ? On recrute !
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div id="music">
+                    {# musiciens #}
+                    <div class="row">
+                        <div class="col s2">
+                            Musiciens :
+                        </div>
+                    </div>
+                    {% for membre in musiciens %}
+                        <div class="row">
+                            <div class="col s4 offset-s2">
+                                {{ membre.pseudo }}
+                            </div>
+                        </div>
+                    {% empty %}
+                        <div class="row">
+                            <div class="col s4 offset-s2">
+                                pas de musiciens sur ce projet ? On recrute !
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div id="code">
+                    {# codeurs #}
+                    <div class="row">
+                        <div class="col s2">
+                            Codeurs :
+                        </div>
+                    </div>
+                    {% for membre in codeurs %}
+                        <div class="row">
+                            <div class="col s4 offset-s2">
+                                {{ membre.pseudo }}
+                            </div>
+                        </div>
+                    {% empty %}
+                        <div class="row">
+                            <div class="col s4 offset-s2">
+                                pas de codeurs sur ce projet ? On recrute !
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
-        {% empty %}
-            <div class="row">
-                <div class="col s4 offset-s2">
-                    pas de graphiste sur ce projet ? On recrute !
-                </div>
-            </div>
-        {% endfor %}
-
-        {# musiciens #}
-        <div class="row">
-            <div class="col s2">
-                Musiciens :
-            </div>
         </div>
-        {% for membre in musiciens %}
-            <div class="row">
-                <div class="col s4 offset-s2">
-                    {{ membre.pseudo }}
-                </div>
-            </div>
-        {% empty %}
-            <div class="row">
-                <div class="col s4 offset-s2">
-                    pas de musiciens sur ce projet ? On recrute !
-                </div>
-            </div>
-        {% endfor %}
-
-        {# codeurs #}
-        <div class="row">
-            <div class="col s2">
-                Codeurs :
-            </div>
-        </div>
-        {% for membre in codeurs %}
-            <div class="row">
-                <div class="col s4 offset-s2">
-                    {{ membre.pseudo }}
-                </div>
-            </div>
-        {% empty %}
-            <div class="row">
-                <div class="col s4 offset-s2">
-                    pas de codeurs sur ce projet ? On recrute !
-                </div>
-            </div>
-        {% endfor %}
 
     </div>
 </div>
