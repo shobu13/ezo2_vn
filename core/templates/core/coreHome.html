@@ -85,7 +85,16 @@
                     {{ projet_phare.description }}
                 </div>
                 <div id="chef">
-                    {{ projet_phare.chef }}
+                    <div class="row">
+                        <div class="col s2">
+                            Chef de projet :
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s4 offset-s2">
+                            {{ projet_phare.chef }}
+                        </div>
+                    </div>
                 </div>
                 <div id="graph">
                     {# Graphistes #}
