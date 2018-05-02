@@ -17,6 +17,8 @@ class Projet(models.Model):
                                        related_name="graphiste", blank=True)
     musicien = models.ManyToManyField('Membre', verbose_name="Musicien(s)",
                                       related_name="musicien", blank=True)
+    scenariste = models.ManyToManyField('Membre', verbose_name="Scénariste(s)",
+                                      related_name="scenariste", blank=True)
     codeur = models.ManyToManyField('Membre', verbose_name="Codeur(s)",
                                     related_name="codeur", blank=True)
     etat = models.BooleanField(verbose_name="Terminé ?", default=False)

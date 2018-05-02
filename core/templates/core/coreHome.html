@@ -21,6 +21,32 @@
             text-align: center;
         }
     </style>{% endcomment %}
+
+    <style>
+        /*Black color to the text*/
+        .card-tabs .tabs .tab a {
+            color: #d500f9;
+        }
+
+        /*Text color on hover*/
+        .card-tabs .tabs .tab a:hover {
+        {% comment %}background-color: #f3e5f5 ;
+        color: #d500f9;{% endcomment %}
+        }
+
+        /*Background and text color when a tab is active*/
+        .card-tabs .tabs .tab a.active {
+            background-color: #f3e5f5;
+            color: #d500f9;
+        }
+
+        /*Color of underline*/
+        .card-tabs .tabs .indicator {
+            background-color: #4a148c;
+        }
+
+
+    </style>
 </head>
 <body style="overflow-y: scroll">
 
@@ -77,6 +103,7 @@
                     <li class="tab"><a href="#chef">Chef de projet</a></li>
                     <li class="tab"><a href="#graph">Graphistes</a></li>
                     <li class="tab"><a href="#music">Musiciens</a></li>
+                    <li class="tab"><a href="#scenar">Scénaristes</a></li>
                     <li class="tab"><a href="#code">Codeurs</a></li>
                 </ul>
             </div>
@@ -134,6 +161,27 @@
                         <div class="row">
                             <div class="col s4 offset-s2">
                                 pas de musiciens sur ce projet ? On recrute !
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div id="scenar">
+                    {# scénaristes #}
+                    <div class="row">
+                        <div class="col s2">
+                            Scénaristes :
+                        </div>
+                    </div>
+                    {% for membre in scenaristes %}
+                        <div class="row">
+                            <div class="col s4 offset-s2">
+                                {{ membre.pseudo }}
+                            </div>
+                        </div>
+                    {% empty %}
+                        <div class="row">
+                            <div class="col s4 offset-s2">
+                                pas de scénaristes sur ce projet ? On recrute !
                             </div>
                         </div>
                     {% endfor %}
