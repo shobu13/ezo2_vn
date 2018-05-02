@@ -1,8 +1,3 @@
 $(document).ready(function () {
-    $('.tabs').tabs({'onShow': reload()});
+    $('.tabs').tabs();
 });
-function reload()
-{
-    var instance = M.Tabs.getInstance($('.tabs'));
-    alert('mh');
-}

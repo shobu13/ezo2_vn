@@ -21,7 +21,7 @@
         }
     </style>{% endcomment %}
 </head>
-<body>
+<body style="overflow-y: scroll">
 
 <!-- NAVBAR -->
 
@@ -38,7 +38,7 @@
     </div>
 
     <div class="nav-content purple darken-2">
-        <ul class="tabs tabs-transparent">
+        <ul class="tabs tabs-transparent tabs-fixed-width z-depth-1">
             <li class="tab"><a href="#acceuil" class="active">Acceuil</a></li>
             <li class="tab"><a href="#phare">En ce moment</a></li>
             <li class="tab"><a href="#produits">Produits</a></li>
@@ -165,7 +165,7 @@
 
 <!--  Scripts-->
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="{% static 'materialize/js/materialize.js' %}"></script>
+<script src = "{% static 'materialize/js/materialize.js' %}" ></script>
 <script src="{% static 'core/js/init.js' %}"></script>
 </body>
 </html>
