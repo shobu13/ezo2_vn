@@ -1,29 +1,171 @@
 <!DOCTYPE html>
+
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>ezo2 - Visual Novel</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static 'materialize/css/materialize.css' %}" type="text/css" rel="stylesheet"
+          media="screen,projection"/>
+    {% comment %}<style>
+        [class*="col"], footer {
+            background-color: lightgreen;
+            border: 2px solid black;
+            border-radius: 6px;
+            line-height: 40px;
+            text-align: center;
+        }
+    </style>{% endcomment %}
 </head>
 <body>
-{{ chef }}
-<hr/>
-{% for membre in graphistes %}
-    {{ membre.pseudo }}
-{% empty %}
-    pas de graphiste sur ce projet ? On recrute !
-{% endfor %}
-<hr/>
-{% for membre in musiciens %}
-    {{ membre.pseudo }}
-{% empty %}
-    pas de musicien sur ce projet ? On recrute !
-{% endfor %}
-<hr/>
-{% for membre in codeurs %}
-    {{ membre.pseudo }}
-{% empty %}
-    pas de codeur sur ce projet ? On recrute !
-{% endfor %}
 
+<!-- NAVBAR -->
+
+<nav class="nav-extended">
+    <div class="nav-wrapper purple darken-1">
+        <a href="#" class="brand-logo">Ezo2 - Visual Novel</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
+                class="material-icons">menu</i></a>
+        {% comment %}<ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">JavaScript</a></li>
+        </ul>{% endcomment %}
+    </div>
+
+    <div class="nav-content purple darken-2">
+        <ul class="tabs tabs-transparent">
+            <li class="tab"><a href="#acceuil" class="active">Acceuil</a></li>
+            <li class="tab"><a href="#phare">En ce moment</a></li>
+            <li class="tab"><a href="#produits">Produits</a></li>
+            <li class="tab"><a href="#a_propos">A Propos</a></li>
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="sass.html">Sass</a></li>
+    <li><a href="badges.html">Components</a></li>
+    <li><a href="collapsible.html">JavaScript</a></li>
+</ul>
+
+<div id="acceuil" class="col s12">
+    <div class="container">
+        <div class="row">
+            <div class="col 12">
+                Bienvenue sur la page de présentation d'ezo 2 blablabla
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="phare" class="col s12">
+    <div class="container">
+        <div class="row">
+            <div class="col s8 offset-s2">
+                <img src="{{ projet_phare.header.url }}" class="responsive-img">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
+                {{ projet_phare.description }}
+            </div>
+        </div>
+        {#    Chef de projet #}
+        <div class="row">
+            <div class="col s2">
+                Chef du Projet :
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s4 offset-s2">
+                {{ projet_phare.chef.pseudo }}
+            </div>
+        </div>
+        {# Graphistes #}
+        <div class="row">
+            <div class="col s2">
+                Graphistes :
+            </div>
+        </div>
+        {% for membre in graphistes %}
+            <div class="row">
+                <div class="col s4 offset-s2">
+                    {{ membre.pseudo }}
+                </div>
+            </div>
+        {% empty %}
+            <div class="row">
+                <div class="col s4 offset-s2">
+                    pas de graphiste sur ce projet ? On recrute !
+                </div>
+            </div>
+        {% endfor %}
+
+        {# musiciens #}
+        <div class="row">
+            <div class="col s2">
+                Musiciens :
+            </div>
+        </div>
+        {% for membre in musiciens %}
+            <div class="row">
+                <div class="col s4 offset-s2">
+                    {{ membre.pseudo }}
+                </div>
+            </div>
+        {% empty %}
+            <div class="row">
+                <div class="col s4 offset-s2">
+                    pas de musiciens sur ce projet ? On recrute !
+                </div>
+            </div>
+        {% endfor %}
+
+        {# codeurs #}
+        <div class="row">
+            <div class="col s2">
+                Codeurs :
+            </div>
+        </div>
+        {% for membre in codeurs %}
+            <div class="row">
+                <div class="col s4 offset-s2">
+                    {{ membre.pseudo }}
+                </div>
+            </div>
+        {% empty %}
+            <div class="row">
+                <div class="col s4 offset-s2">
+                    pas de codeurs sur ce projet ? On recrute !
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+<div id="produits" class="col s12">
+    Test 2
+</div>
+
+<div id="a_propos" class="col s12">
+    Test 3
+</div>
+
+<div class="row">
+    <div class="col s12">
+        <img src="{% static 'core/img/ezo_banniere_sanstitre.png' %}" class="responsive-img">
+    </div>
+</div>
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="{% static 'materialize/js/materialize.js' %}"></script>
+<script src="{% static 'core/js/init.js' %}"></script>
 </body>
 </html>
