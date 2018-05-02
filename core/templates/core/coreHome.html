@@ -23,9 +23,9 @@
     </style>{% endcomment %}
 
     <style>
-        /*Black color to the text*/
+        /*color to the text*/
         .card-tabs .tabs .tab a {
-            color: #d500f9;
+            color: {{ projet_phare.couleur_tab_texte }};
         }
 
         /*Text color on hover*/
@@ -36,13 +36,12 @@
 
         /*Background and text color when a tab is active*/
         .card-tabs .tabs .tab a.active {
-            background-color: #f3e5f5;
-            color: #d500f9;
+            background-color: {{ projet_phare.couleur_tab_active_background }};
         }
 
         /*Color of underline*/
         .card-tabs .tabs .indicator {
-            background-color: #4a148c;
+            background-color: {{ projet_phare.couleur_tab_soulignement }};
         }
 
 
