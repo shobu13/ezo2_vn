@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="{% static 'materialize/css/materialize.css' %}" type="text/css" rel="stylesheet"
           media="screen,projection"/>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="materialize-social.css">
     {% comment %}<style>
         [class*="col"], footer {
             background-color: lightgreen;
@@ -23,14 +26,6 @@
     </style>{% endcomment %}
 
     <style>
-
-        @font-face {
-            font-family: 'marker_feltregular';
-            src: url('{% static 'core/font/markerfelt-webfont.woff2' %}') format('woff2'),
-            url('{% static 'core/font/markerfelt-webfont.woff' %}') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
 
         /*color to the text*/
         .card-tabs .tabs .tab a {
@@ -56,9 +51,9 @@
         /*Text color on idle*/
         .bu .tabs .tab a {
             color: #000000;
-            font-family: marker_feltregular, fantasy;
+            font-weight: bold;
             text-transform: none;
-            font-size: 1.5em;
+            font-size: large;
         }
 
         /*Background and text color when a tab is active*/
@@ -70,6 +65,11 @@
         .bu .tabs .tab a:hover {
             background-color: #ce93d8;
             color: #f44336;
+        }
+
+        .fixed-action-btn a:hover
+        {
+            background-color: #ce93d8;
         }
     </style>
 </head>
@@ -247,6 +247,21 @@
 <div id="a_propos" class="col s12">
     Test 3
 </div>
+
+{# bouton menu #}
+<div class="fixed-action-btn" style="right: unset; left: 0; bottom: 30%">
+    <a class="btn-floating btn-large purple waves-effect">
+        <i class="large material-icons">add</i>
+    </a>
+    <ul>
+        <li><a class="btn-floating blue "><i class="fa fa-twitter"></i></a></li>
+        <li><a class="btn-floating green pulse"><i class="material-icons">announcement</i></a>
+        </li>
+        <li><a class="btn-floating red"><i class="material-icons">email</i></a>
+        </li>
+    </ul>
+</div>
+
 
 <div class="row">
     <div class="col s12">
