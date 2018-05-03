@@ -23,6 +23,15 @@
     </style>{% endcomment %}
 
     <style>
+
+        @font-face {
+            font-family: 'marker_feltregular';
+            src: url('{% static 'core/font/markerfelt-webfont.woff2' %}') format('woff2'),
+            url('{% static 'core/font/markerfelt-webfont.woff' %}') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         /*color to the text*/
         .card-tabs .tabs .tab a {
             color: {{ projet_phare.couleur_tab_texte }};
@@ -44,14 +53,23 @@
             background-color: {{ projet_phare.couleur_tab_soulignement }};
         }
 
+        /*Text color on idle*/
+        .bu .tabs .tab a {
+            color: #000000;
+            font-family: marker_feltregular, fantasy;
+            text-transform: none;
+            font-size: 1.5em;
+        }
+
+        /*Background and text color when a tab is active*/
+        .bu .tabs .tab a.active {
+            background-color: #e1bee7;
+        }
+
         /*Text color on hover*/
         .bu .tabs .tab a:hover {
-        background-color: #ce93d8  ;
-        color: #ce93d8  ;
-        }
-        /*Text color on idle*/
-        .bu .tabs .tab a:hover {
-        color: #f44336 ;
+            background-color: #ce93d8;
+            color: #f44336;
         }
     </style>
 </head>
@@ -77,7 +95,7 @@
                 <li class="tab"><a href="#acceuil" class="active">Acceuil</a></li>
                 <li class="tab"><a href="#phare">En ce moment</a></li>
                 <li class="tab"><a href="#produits">Produits</a></li>
-                <li class="tab"><a href="#a_propos">A Propos</a></li>
+                <li class="tab"><a href="#a_propos">À Propos</a></li>
             </ul>
         </div>
     </div>
