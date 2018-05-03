@@ -44,7 +44,15 @@
             background-color: {{ projet_phare.couleur_tab_soulignement }};
         }
 
-
+        /*Text color on hover*/
+        .bu .tabs .tab a:hover {
+        background-color: #ce93d8  ;
+        color: #ce93d8  ;
+        }
+        /*Text color on idle*/
+        .bu .tabs .tab a:hover {
+        color: #f44336 ;
+        }
     </style>
 </head>
 <body style="overflow-y: scroll">
@@ -52,8 +60,8 @@
 <!-- NAVBAR -->
 
 <nav class="nav-extended">
-    <div class="nav-wrapper purple darken-1">
-        <a href="#" class="brand-logo">Ezo2 - Visual Novel</a>
+    <div class="nav-wrapper purple lighten-5">
+        <a href="#" class="brand-logo black-text">Ezo2 - Visual Novel</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
                 class="material-icons">menu</i></a>
         {% comment %}<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -63,13 +71,15 @@
         </ul>{% endcomment %}
     </div>
 
-    <div class="nav-content purple darken-2">
-        <ul class="tabs tabs-transparent tabs-fixed-width z-depth-1">
-            <li class="tab"><a href="#acceuil" class="active">Acceuil</a></li>
-            <li class="tab"><a href="#phare">En ce moment</a></li>
-            <li class="tab"><a href="#produits">Produits</a></li>
-            <li class="tab"><a href="#a_propos">A Propos</a></li>
-        </ul>
+    <div class="nav-content purple lighten-4">
+        <div class="bu">
+            <ul class="tabs tabs-transparent tabs-fixed-width">
+                <li class="tab"><a href="#acceuil" class="active">Acceuil</a></li>
+                <li class="tab"><a href="#phare">En ce moment</a></li>
+                <li class="tab"><a href="#produits">Produits</a></li>
+                <li class="tab"><a href="#a_propos">A Propos</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
 
