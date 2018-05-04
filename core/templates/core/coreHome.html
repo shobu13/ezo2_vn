@@ -26,9 +26,19 @@
     </style>{% endcomment %}
 
     <style>
-        @media only screen and (max-width: 320px) {
-            body {
-                font-size: 3em;
+        @media only screen and (orientation: portrait) {
+            #wrapper {
+                display: none;
+            }
+
+            #avertissement {
+                display: block;
+            }
+        }
+
+        @media only screen and (orientation: landscape) {
+            #avertissement {
+                display: none;
             }
         }
 
@@ -83,198 +93,207 @@
 </head>
 <body style="overflow-y: scroll;">
 
-<!-- NAVBAR -->
 
-<nav class="nav-extended">
-    <div class="nav-wrapper purple lighten-5">
-        <a href="#" class="brand-logo black-text">Ezo2 - Visual Novel</a>
-        {% comment %}<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
+<div id="wrapper">
+    <!-- html du site -->
+
+    <!-- NAVBAR -->
+    <nav class="nav-extended">
+        <div class="nav-wrapper purple lighten-5">
+            <a href="#" class="brand-logo black-text">Ezo2 - Visual Novel</a>
+            {% comment %}<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
                 class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="sass.html">Sass</a></li>
             <li><a href="badges.html">Components</a></li>
             <li><a href="collapsible.html">JavaScript</a></li>
         </ul>{% endcomment %}
-    </div>
-
-    <div class="nav-content purple lighten-4">
-        <div class="bu">
-            <ul class="tabs tabs-transparent tabs-fixed-width">
-                <li class="tab"><a href="#acceuil" class="active">Acceuil</a></li>
-                <li class="tab"><a href="#phare" class="">En ce moment</a></li>
-                <li class="tab"><a href="#produits" class="">Produits</a></li>
-                <li class="tab"><a href="#a_propos" class="">À Propos</a></li>
-            </ul>
         </div>
-    </div>
-</nav>
 
-<ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Sass</a></li>
-    <li><a href="badges.html">Components</a></li>
-    <li><a href="collapsible.html">JavaScript</a></li>
-</ul>
-
-<div id="acceuil" class="col s12">
-    <div class="container">
-        <div class="row">
-            <div class="col 12">
-                {# image future #}
-            </div>
-        </div>
-    </div>
-</div>
-
-<div id="phare" class="col s12">
-    <div class="container">
-
-        <div class="card">
-            <div class="card-image">
-                <img src="{{ projet_phare.header.url }}" class="responsive-img">
-            </div>
-            <div class="card-tabs">
-                <ul class="tabs tabs-fixed-width">
-                    <li class="tab"><a href="#desc" class="active">Description</a></li>
-                    <li class="tab"><a href="#chef">Chef de projet</a></li>
-                    <li class="tab"><a href="#graph">Graphistes</a></li>
-                    <li class="tab"><a href="#music">Musiciens</a></li>
-                    <li class="tab"><a href="#scenar">Scénaristes</a></li>
-                    <li class="tab"><a href="#code">Codeurs</a></li>
+        <div class="nav-content purple lighten-4">
+            <div class="bu">
+                <ul class="tabs tabs-transparent tabs-fixed-width">
+                    <li class="tab"><a href="#acceuil" class="active">Acceuil</a></li>
+                    <li class="tab"><a href="#phare" class="">En ce moment</a></li>
+                    <li class="tab"><a href="#produits" class="">Produits</a></li>
+                    <li class="tab"><a href="#a_propos" class="">À Propos</a></li>
                 </ul>
             </div>
-            <div class="card-content grey lighten-4">
-                <div id="desc">
-                    {{ projet_phare.description }}
-                </div>
-                <div id="chef">
-                    <div class="row">
-                        <div class="col s2">
-                            Chef de projet :
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s4 offset-s2">
-                            {{ projet_phare.chef }}
-                        </div>
-                    </div>
-                </div>
-                <div id="graph">
-                    {# Graphistes #}
-                    <div class="row">
-                        <div class="col s2">
-                            Graphistes :
-                        </div>
-                    </div>
-                    {% for membre in graphistes %}
-                        <div class="row">
-                            <div class="col s4 offset-s2">
-                                {{ membre.pseudo }}
-                            </div>
-                        </div>
-                    {% empty %}
-                        <div class="row">
-                            <div class="col s4 offset-s2">
-                                pas de graphiste sur ce projet ? On recrute !
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-                <div id="music">
-                    {# musiciens #}
-                    <div class="row">
-                        <div class="col s2">
-                            Musiciens :
-                        </div>
-                    </div>
-                    {% for membre in musiciens %}
-                        <div class="row">
-                            <div class="col s4 offset-s2">
-                                {{ membre.pseudo }}
-                            </div>
-                        </div>
-                    {% empty %}
-                        <div class="row">
-                            <div class="col s4 offset-s2">
-                                pas de musiciens sur ce projet ? On recrute !
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-                <div id="scenar">
-                    {# scénaristes #}
-                    <div class="row">
-                        <div class="col s2">
-                            Scénaristes :
-                        </div>
-                    </div>
-                    {% for membre in scenaristes %}
-                        <div class="row">
-                            <div class="col s4 offset-s2">
-                                {{ membre.pseudo }}
-                            </div>
-                        </div>
-                    {% empty %}
-                        <div class="row">
-                            <div class="col s4 offset-s2">
-                                pas de scénaristes sur ce projet ? On recrute !
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-                <div id="code">
-                    {# codeurs #}
-                    <div class="row">
-                        <div class="col s2">
-                            Codeurs :
-                        </div>
-                    </div>
-                    {% for membre in codeurs %}
-                        <div class="row">
-                            <div class="col s4 offset-s2">
-                                {{ membre.pseudo }}
-                            </div>
-                        </div>
-                    {% empty %}
-                        <div class="row">
-                            <div class="col s4 offset-s2">
-                                pas de codeurs sur ce projet ? On recrute !
-                            </div>
-                        </div>
-                    {% endfor %}
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="sass.html">Sass</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="collapsible.html">JavaScript</a></li>
+    </ul>
+
+    <div id="acceuil" class="col s12">
+        <div class="container">
+            <div class="row">
+                <div class="col 12">
+                    {# image future #}
                 </div>
             </div>
         </div>
-
     </div>
-</div>
 
-<div id="produits" class="col s12">
-    Test 2
-</div>
+    <div id="phare" class="col s12">
+        <div class="container">
 
-<div id="a_propos" class="col s12">
-    Test 3
-</div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{ projet_phare.header.url }}" class="responsive-img">
+                </div>
+                <div class="card-tabs">
+                    <ul class="tabs tabs-fixed-width">
+                        <li class="tab"><a href="#desc" class="active">Description</a></li>
+                        <li class="tab"><a href="#chef">Chef de projet</a></li>
+                        <li class="tab"><a href="#graph">Graphistes</a></li>
+                        <li class="tab"><a href="#music">Musiciens</a></li>
+                        <li class="tab"><a href="#scenar">Scénaristes</a></li>
+                        <li class="tab"><a href="#code">Codeurs</a></li>
+                    </ul>
+                </div>
+                <div class="card-content grey lighten-4">
+                    <div id="desc">
+                        {{ projet_phare.description }}
+                    </div>
+                    <div id="chef">
+                        <div class="row">
+                            <div class="col s2">
+                                Chef de projet :
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s4 offset-s2">
+                                {{ projet_phare.chef }}
+                            </div>
+                        </div>
+                    </div>
+                    <div id="graph">
+                        {# Graphistes #}
+                        <div class="row">
+                            <div class="col s2">
+                                Graphistes :
+                            </div>
+                        </div>
+                        {% for membre in graphistes %}
+                            <div class="row">
+                                <div class="col s4 offset-s2">
+                                    {{ membre.pseudo }}
+                                </div>
+                            </div>
+                        {% empty %}
+                            <div class="row">
+                                <div class="col s4 offset-s2">
+                                    pas de graphiste sur ce projet ? On recrute !
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div id="music">
+                        {# musiciens #}
+                        <div class="row">
+                            <div class="col s2">
+                                Musiciens :
+                            </div>
+                        </div>
+                        {% for membre in musiciens %}
+                            <div class="row">
+                                <div class="col s4 offset-s2">
+                                    {{ membre.pseudo }}
+                                </div>
+                            </div>
+                        {% empty %}
+                            <div class="row">
+                                <div class="col s4 offset-s2">
+                                    pas de musiciens sur ce projet ? On recrute !
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div id="scenar">
+                        {# scénaristes #}
+                        <div class="row">
+                            <div class="col s2">
+                                Scénaristes :
+                            </div>
+                        </div>
+                        {% for membre in scenaristes %}
+                            <div class="row">
+                                <div class="col s4 offset-s2">
+                                    {{ membre.pseudo }}
+                                </div>
+                            </div>
+                        {% empty %}
+                            <div class="row">
+                                <div class="col s4 offset-s2">
+                                    pas de scénaristes sur ce projet ? On recrute !
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div id="code">
+                        {# codeurs #}
+                        <div class="row">
+                            <div class="col s2">
+                                Codeurs :
+                            </div>
+                        </div>
+                        {% for membre in codeurs %}
+                            <div class="row">
+                                <div class="col s4 offset-s2">
+                                    {{ membre.pseudo }}
+                                </div>
+                            </div>
+                        {% empty %}
+                            <div class="row">
+                                <div class="col s4 offset-s2">
+                                    pas de codeurs sur ce projet ? On recrute !
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
 
-{# bouton menu #}
-<div class="fixed-action-btn" style="right: unset; left: 0; bottom: 30%">
-    <a class="btn-floating btn-large waves-effect">
-        <i class="large material-icons">add</i>
-    </a>
-    <ul>
-        <li><a class="btn-floating blue hoverable"><i class="fa fa-twitter"></i></a></li>
-        <li><a class="btn-floating green pulse hoverable"><i class="material-icons">announcement</i></a>
-        </li>
-        <li><a class="btn-floating red hoverable"><i class="material-icons">email</i></a>
-        </li>
-    </ul>
-</div>
-
-
-<div class="row">
-    <div class="col s12">
-        <img src="{% static 'core/img/ezo_banniere.png' %}" class="responsive-img">
+        </div>
     </div>
+
+    <div id="produits" class="col s12">
+        Test 2
+    </div>
+
+    <div id="a_propos" class="col s12">
+        Test 3
+    </div>
+
+    {# bouton menu #}
+    <div class="fixed-action-btn" style="right: unset; left: 0; bottom: 30%">
+        <a class="btn-floating btn-large waves-effect">
+            <i class="large material-icons">add</i>
+        </a>
+        <ul>
+            <li><a class="btn-floating blue hoverable"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="btn-floating green pulse hoverable"><i
+                    class="material-icons">announcement</i></a>
+            </li>
+            <li><a class="btn-floating red hoverable"><i class="material-icons">email</i></a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="row">
+        <div class="col s12">
+            <img src="{% static 'core/img/ezo_banniere.png' %}" class="responsive-img">
+        </div>
+    </div>
+
+</div>
+<div id="avertissement">
+    <p>Attention ce site n&apos;est visible qu&apos;en mode paysage.</p>
 </div>
 
 <!--  Scripts-->
