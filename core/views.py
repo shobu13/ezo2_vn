@@ -11,4 +11,12 @@ def core_home(request):
     musiciens = projet_phare.musicien.all()
     scenaristes = projet_phare.scenariste.all()
     codeurs = projet_phare.codeur.all()
+
+    #récupération des projets et tri
+    projets_raw = Projet.objects.all()
+    projets_liste = []
+
+    for i in range(0, len(projets_raw), 2):
+        projets_liste += (projets_raw[i:i+2],)
+
     return render(request, 'core/coreHome.html', locals())

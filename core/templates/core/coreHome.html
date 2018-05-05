@@ -122,7 +122,7 @@
         <div class="container">
             <div class="row">
                 <div class="col s8 offset-s2 center-align">
-{#                    <img src="{% static 'core/img/image_placeholder.png' %}" class="responsive-img">#}
+                    <img src="{% static 'core/img/ezo_chibi1.png' %}" class="responsive-img">
                 </div>
             </div>
         </div>
@@ -252,7 +252,32 @@
     </div>
 
     <div id="produits" class="col s12">
-        Test 2
+        <div class="container">
+            {% for projets in projets_liste %}
+                <div class="row">
+                    {% for projet in projets %}
+                        <div class="col s5">
+                            <div class="card hoverable">
+                                <div class="card-image waves-effect waves-block waves-light">
+                                    <img class="activator" src="{{ projet.header.url }}">
+                                </div>
+                                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">{{ projet.nom }}<i
+                            class="material-icons right">more_vert</i></span>
+                                    <p><a href="#">Page du projet</a></p>
+                                </div>
+                                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">{{ projet.nom }}<i
+                            class="material-icons right">close</i></span>
+                                    <hr/>
+                                    <p>{{ projet.description | truncatewords:100}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </div>
     </div>
 
     <div id="a_propos" class="col s12">
