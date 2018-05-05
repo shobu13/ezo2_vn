@@ -255,10 +255,14 @@
         <div class="container">
             {% for projets in projets_liste %}
                 <div class="row">
+                    <div class="col s1">
+                    
+                    </div>
                     {% for projet in projets %}
-                        <div class="col s5 offset-s1">
+                        <div class="col s5">
                             <div class="card hoverable">
-                                <div class="card-image waves-effect waves-block waves-light" style="height: 100px">
+                                <div class="card-image waves-effect waves-block waves-light"
+                                     style="height: 100px">
                                     <img class="activator" src="{{ projet.header.url }}">
                                     <hr/>
                                 </div>
@@ -271,7 +275,7 @@
                     <span class="card-title grey-text text-darken-4">{{ projet.nom }}<i
                             class="material-icons right">close</i></span>
                                     <hr/>
-                                    <p>{{ projet.description | truncatewords:100}}</p>
+                                    <p>{{ projet.description | truncatewords:100 }}</p>
                                 </div>
                             </div>
                         </div>
