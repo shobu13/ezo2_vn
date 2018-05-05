@@ -91,7 +91,7 @@
         }
     </style>
 </head>
-<body style="overflow-y: scroll;">
+<body style="overflow-y: scroll; background-image: url('{% static 'core/img/ezo_sitefond.png' %}'); background-size: cover">
 
 
 <div id="wrapper">
@@ -99,16 +99,6 @@
 
     <!-- NAVBAR -->
     <nav class="nav-extended">
-        <div class="nav-wrapper purple lighten-5">
-            <a href="#" class="brand-logo black-text">Ezo2 - Visual Novel</a>
-            {% comment %}<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i
-                class="material-icons">menu</i></a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">JavaScript</a></li>
-        </ul>{% endcomment %}
-        </div>
 
         <div class="nav-content purple lighten-4">
             <div class="bu">
@@ -131,8 +121,8 @@
     <div id="acceuil" class="col s12">
         <div class="container">
             <div class="row">
-                <div class="col 12">
-                    {# image future #}
+                <div class="col s8 offset-s2 center-align">
+{#                    <img src="{% static 'core/img/image_placeholder.png' %}" class="responsive-img">#}
                 </div>
             </div>
         </div>
@@ -286,8 +276,8 @@
 
 
     <div class="row">
-        <div class="col s12">
-            <img src="{% static 'core/img/ezo_banniere.png' %}" class="responsive-img">
+        <div class="col s4 offset-s4">
+            <img src="{% static 'core/img/ezo_bannierebis.png' %}" class="responsive-img">
         </div>
     </div>
 
