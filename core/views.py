@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from core.models import Projet, Membre
+from core.models import Projet
 
 
 def core_home(request):

@@ -22,7 +22,7 @@ from ezo import views
 
 
 urlpatterns = [
-    path('', views.ezo_home),
+    path('', views.ezo_home, name='when-light-go-down'),
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

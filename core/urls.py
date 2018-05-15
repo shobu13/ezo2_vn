@@ -19,10 +19,20 @@ from django.conf import settings
 from django.urls import path, include
 
 from core import views
+from core.models import Projet
+
+import sys
 
 urlpatterns = [
-    path('', views.core_home),
-    path('ezo', include('ezo.urls')),
+    path('', views.core_home, name='core_home'),
+    # path('ezo', include('ezo.urls')),
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+projets_liste = Projet.objects.all()
+for projet in projets_liste:
+    try:
+        urlpatterns += path(str(projet.slug), include(str(projet.slug) + '.urls'))
+    except:
+        print("Unexpected error:", sys.exc_info()[0])
