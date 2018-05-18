@@ -15,11 +15,26 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from core.models import Projet
+
+
+
+
+import sys
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls, name='admin_site'),
     path('', include('core.urls')),
 
     # addon url
     path('markdownx/', include('markdownx.urls')),
 ]
+
+projets_liste = Projet.objects.all()
+for projet in projets_liste:
+    try:
+        print("path string : ",
+              "path({}, include({} ))".format(str(projet.slug), str(projet.app_name) + '.urls'))
+        urlpatterns.append(path(str(projet.slug), include(str(projet.app_name) + '.urls')))
+    except:
+        print("Unexpected error:", sys.exc_info()[0])

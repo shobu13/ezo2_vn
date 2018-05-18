@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.contrib.auth.decorators import login_required, permission_required
+from django.shortcuts import render, redirect, reverse
 
 from core.models import Projet
 
@@ -12,11 +13,13 @@ def core_home(request):
     scenaristes = projet_phare.scenariste.all()
     codeurs = projet_phare.codeur.all()
 
-    #récupération des projets et tri
+    # récupération des projets et tri
     projets_raw = Projet.objects.all()
     projets_liste = []
 
     for i in range(0, len(projets_raw), 2):
-        projets_liste += (projets_raw[i:i+2],)
+        projets_liste += (projets_raw[i:i + 2],)
 
     return render(request, 'core/coreHome.html', locals())
+
+
