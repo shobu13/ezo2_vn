@@ -23,6 +23,7 @@ class Projet(models.Model):
                                     related_name="codeur", blank=True)
     etat = models.BooleanField(verbose_name="Terminé ?", default=False)
     phare = models.BooleanField(verbose_name="Projet Phare ?", default=False)
+    adulte = models.BooleanField(verbose_name="Adulte ?", default=False)
 
     # tab customisation
     couleur_tab_texte = models.CharField(max_length=7, default="#d500f9", blank=True)

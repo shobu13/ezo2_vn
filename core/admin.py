@@ -6,6 +6,7 @@ from django.shortcuts import render
 from core.models import Projet, Membre
 
 import os
+import shutil
 
 
 class ProjetAdmin(admin.ModelAdmin):
@@ -35,12 +36,12 @@ class ProjetAdmin(admin.ModelAdmin):
         }),
         ('Autre', {
             # définis les champs qui y sont représenter
-            'fields': ('etat', 'phare',)
+            'fields': ('etat', 'phare', 'adulte', )
         }),
 
     )
 
-    actions = ['app_create', 'app_check', 'app_rename']
+    actions = ['app_create', 'app_check', 'app_supr']
 
     def app_create(self, request, queryset):
         for item in queryset:
@@ -65,6 +66,11 @@ class ProjetAdmin(admin.ModelAdmin):
                 item.app_is_create = False
                 item.save()
 
+    def app_supr(self, request, queryset):
+        for item in queryset:
+            if item.app_name in os.listdir():
+                shutil.rmtree(item.app_name)
+            item.delete()
 
 
 admin.site.register(Projet, ProjetAdmin)
