@@ -23,11 +23,16 @@ class Projet(models.Model):
                                     related_name="codeur", blank=True)
     etat = models.BooleanField(verbose_name="Terminé ?", default=False)
     phare = models.BooleanField(verbose_name="Projet Phare ?", default=False)
+    adulte = models.BooleanField(verbose_name="Adulte ?", default=False)
 
     # tab customisation
     couleur_tab_texte = models.CharField(max_length=7, default="#d500f9", blank=True)
     couleur_tab_active_background = models.CharField(max_length=7, default="#f3e5f5", blank=True)
     couleur_tab_soulignement = models.CharField(max_length=7, default="#4a148c", blank=True)
+
+    # app
+    app_name = models.CharField(max_length=20, null=False, blank=False)
+    app_is_create = models.BooleanField(default=False)
 
     def __str__(self):
         return self.nom
