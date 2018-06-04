@@ -18,10 +18,10 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.urls import path, include
 
-from core import views
+from wtlgd import views
 
 urlpatterns = [
-    path('', views.core_home, name='core_home'),
+    path('', views.wtlgd_home, name='wtlgd_home'),
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
