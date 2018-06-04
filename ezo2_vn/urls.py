@@ -17,9 +17,6 @@ from django.contrib import admin
 from django.urls import path, include
 from core.models import Projet
 
-
-
-
 import sys
 
 urlpatterns = [
