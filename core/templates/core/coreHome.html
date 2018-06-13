@@ -128,7 +128,8 @@
         <div class="container">
             <div class="row">
                 <div class="col s8 offset-s2 center-align">
-                    <img src="{% static 'core/img/ezo_nyan2.png' %}" class="responsive-img" style="margin-top: 10%;">
+                    <img src="{% static 'core/img/ezo_nyan2.png' %}" class="responsive-img"
+                         style="margin-top: 10%;">
                 </div>
             </div>
         </div>
@@ -143,12 +144,12 @@
                 </div>
                 <div class="card-tabs">
                     {% if projet_phare.adulte %}
-                                <a class="btn-floating waves-effect waves-light red"><i
-                                        class="fa-plus18 activator"></i></a>
-                            {% else %}
-                                <a class="btn-floating waves-effect waves-light green"><i
-                                        class="material-icons activator">check</i></a>
-                            {% endif %}
+                        <a class="btn-floating waves-effect waves-light red"><i
+                                class="fa-plus18 activator"></i></a>
+                    {% else %}
+                        <a class="btn-floating waves-effect waves-light green"><i
+                                class="material-icons activator">check</i></a>
+                    {% endif %}
                     <ul class="tabs tabs-fixed-width">
                         <li class="tab"><a href="#desc" class="active">Description</a></li>
                         <li class="tab"><a href="#chef">Chef de projet</a></li>
@@ -265,118 +266,120 @@
     </div>
 
     <div id="projets_term" class="col s12"
-        <div class="container">
-            {% for projet in projets_term_liste %}
-                <div class="row">
-                    <div class="offset-s2 col s8">
-                        <div class="card hoverable">
-                            <div class="card-image waves-effect waves-block waves-{{ projet.slug }}">
-                                <img class="activator" src="{{ projet.header.url }}">
-                                <hr/>
-                            </div>
-                            {% if projet.adulte %}
-                                <a class="btn-floating waves-effect waves-light red"><i
-                                        class="fa-plus18 activator"></i></a>
-                            {% else %}
-                                <a class="btn-floating waves-effect waves-light green"><i
-                                        class="material-icons activator">check</i></a>
-                            {% endif %}
-                            <div class="card-content">
+    <div class="container">
+        {% for projet in projets_term_liste %}
+            <div class="row">
+                <div class="offset-s2 col s8">
+                    <div class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-{{ projet.slug }}">
+                            <img class="activator" src="{{ projet.header.url }}">
+                            <hr/>
+                        </div>
+                        {% if projet.adulte %}
+                            <a class="btn-floating waves-effect waves-light red"><i
+                                    class="fa-plus18 activator"></i></a>
+                        {% else %}
+                            <a class="btn-floating waves-effect waves-light green"><i
+                                    class="material-icons activator">check</i></a>
+                        {% endif %}
+                        <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">{{ projet.nom }}<i
                             class="material-icons right">more_vert</i></span>
-                                <p><a href="{{ projet.slug }}">Page du projet</a></p>
-                            </div>
-                            <div class="card-reveal">
+                            <p><a href="{{ projet.slug }}">Page du projet</a></p>
+                        </div>
+                        <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">{{ projet.nom }}<i
                             class="material-icons right">close</i></span>
-                                <hr/>
-                                <p>{{ projet.description | truncatewords:100 }}</p>
-                            </div>
+                            <hr/>
+                            <p>{{ projet.description | truncatewords:100 }}</p>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <style>
-                    .waves-effect.waves-{{ projet.slug }} .waves-ripple {
-                        /* The alpha value allows the text and background color
-                        of the button to still show through. */
-                        background-color: {{ projet.couleur_tab_active_background }};
-                    }
-                </style>
+            <style>
+                .waves-effect.waves-{{ projet.slug }} .waves-ripple {
+                    /* The alpha value allows the text and background color
+                    of the button to still show through. */
+                    background-color: {{ projet.couleur_tab_active_background }};
+                }
+            </style>
 
-            {% endfor %}
-        </div>
+        {% endfor %}
     </div>
+</div>
 
-    <div id="projets_progress" class="col s12">
-        <div class="container">
-            {% for projet in projets_progress_liste %}
-                <div class="row">
-                    <div class="offset-s2 col s8">
-                        <div class="card hoverable">
-                            <div class="card-image waves-effect waves-block waves-{{ projet.slug }}">
-                                <img class="activator" src="{{ projet.header.url }}">
-                                <hr/>
-                            </div>
-                            {% if projet.adulte %}
-                                <a class="btn-floating waves-effect waves-light red"><i
-                                        class="fa-plus18 activator"></i></a>
-                            {% else %}
-                                <a class="btn-floating waves-effect waves-light green"><i
-                                        class="material-icons activator">check</i></a>
-                            {% endif %}
-                            <div class="card-content">
+<div id="projets_progress" class="col s12">
+    <div class="container">
+        {% for projet in projets_progress_liste %}
+            <div class="row">
+                <div class="offset-s2 col s8">
+                    <div class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-{{ projet.slug }}">
+                            <img class="activator" src="{{ projet.header.url }}">
+                            <hr/>
+                        </div>
+                        {% if projet.adulte %}
+                            <a class="btn-floating waves-effect waves-light red"><i
+                                    class="fa-plus18 activator"></i></a>
+                        {% else %}
+                            <a class="btn-floating waves-effect waves-light green"><i
+                                    class="material-icons activator">check</i></a>
+                        {% endif %}
+                        <div class="card-content">
                     <span class="card-title activator grey-text text-darken-4">{{ projet.nom }}<i
                             class="material-icons right">more_vert</i></span>
-                                <p><a href="{{ projet.slug }}">Page du projet</a></p>
-                            </div>
-                            <div class="card-reveal">
+                            <p><a href="{{ projet.slug }}">Page du projet</a></p>
+                        </div>
+                        <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">{{ projet.nom }}<i
                             class="material-icons right">close</i></span>
-                                <hr/>
-                                <p>{{ projet.description | truncatewords:100 }}</p>
-                            </div>
+                            <hr/>
+                            <p>{{ projet.description | truncatewords:100 }}</p>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <style>
-                    .waves-effect.waves-{{ projet.slug }} .waves-ripple {
-                        /* The alpha value allows the text and background color
-                        of the button to still show through. */
-                        background-color: {{ projet.couleur_tab_active_background }};
-                    }
-                </style>
+            <style>
+                .waves-effect.waves-{{ projet.slug }} .waves-ripple {
+                    /* The alpha value allows the text and background color
+                    of the button to still show through. */
+                    background-color: {{ projet.couleur_tab_active_background }};
+                }
+            </style>
 
-            {% endfor %}
-        </div>
+        {% endfor %}
     </div>
+</div>
 
-    <div id="a_propos" class="col s12">
+<div id="a_propos" class="col s12">
+    <div class="container">
         {{ a_propos|markdownify|safe }}
     </div>
+</div>
 
-    {# bouton menu #}
-    <div class="fixed-action-btn" style="right: unset; left: 0; bottom: 30%">
-        <a class="btn-floating btn-large waves-effect">
-            <i class="large material-icons">add</i>
-        </a>
-        <ul>
-            <li><a class="btn-floating blue hoverable"><i class="fa fa-twitter"></i></a></li>
-            <li><a class="btn-floating green pulse hoverable"><i
-                    class="material-icons">announcement</i></a>
-            </li>
-            <li><a class="btn-floating red hoverable"><i class="material-icons">email</i></a>
-            </li>
-        </ul>
+{# bouton menu #}
+<div class="fixed-action-btn" style="right: unset; left: 0; bottom: 30%">
+    <a class="btn-floating btn-large waves-effect">
+        <i class="large material-icons">add</i>
+    </a>
+    <ul>
+        <li><a class="btn-floating blue hoverable"><i class="fa fa-twitter"></i></a></li>
+        <li><a class="btn-floating green pulse hoverable"><i
+                class="material-icons">announcement</i></a>
+        </li>
+        <li><a class="btn-floating red hoverable"><i class="material-icons">email</i></a>
+        </li>
+    </ul>
+</div>
+
+
+<div class="row">
+    <div class="col s4 offset-s4" style="position: fixed; bottom: 0;">
+        <img src="{% static 'core/img/ezo_bannierebis.png' %}" class="responsive-img">
     </div>
-
-
-    <div class="row">
-        <div class="col s4 offset-s4" style="position: fixed; bottom: 0;">
-            <img src="{% static 'core/img/ezo_bannierebis.png' %}" class="responsive-img">
-        </div>
-    </div>
+</div>
 
 </div>
 <div id="avertissement">
