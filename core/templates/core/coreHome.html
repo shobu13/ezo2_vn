@@ -353,7 +353,7 @@
     </div>
 
     <div id="a_propos" class="col s12">
-        {{ a_propos }}
+        {{ a_propos|markdownify|safe }}
     </div>
 
     {# bouton menu #}
