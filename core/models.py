@@ -45,3 +45,7 @@ class Membre(models.Model):
 
     def __str__(self):
         return self.pseudo
+
+
+class Config(models.Model):
+    a_propos = MarkdownxField(default="")
