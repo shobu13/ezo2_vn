@@ -48,4 +48,6 @@ class Membre(models.Model):
 
 
 class Config(models.Model):
+    nom = models.CharField(max_length=100)
     a_propos = MarkdownxField(default="")
+    enable = models.BooleanField()

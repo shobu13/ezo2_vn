@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required, permission_required
 from django.shortcuts import render, redirect, reverse
 
-from core.models import Projet
+from core.models import Projet, Config
 
 
 def core_home(request):
@@ -16,6 +16,9 @@ def core_home(request):
     # récupération des projets et tri
     projets_term_liste = Projet.objects.filter(etat=True)
     projets_progress_liste = Projet.objects.filter(etat=False)
+
+    #récupération a_propos
+    a_propos = Config.objects.get(enable=True).a_propos
 
     return render(request, 'core/coreHome.html', locals())
 
