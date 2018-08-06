@@ -8,6 +8,9 @@ from core.models import *
 import os
 import shutil
 
+import os
+import shutil
+
 
 class ProjetAdmin(admin.ModelAdmin):
     list_display = ('nom', 'etat', 'app_is_create')

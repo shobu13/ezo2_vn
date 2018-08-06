@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 from core.models import Projet
 
+
+
+
 import sys
 
 urlpatterns = [
@@ -32,6 +35,6 @@ for projet in projets_liste:
     try:
         print("path string : ",
               "path({}, include({} ))".format(str(projet.slug), str(projet.app_name) + '.urls'))
-        urlpatterns.append(path(str(projet.slug), include(str(projet.app_name) + '.urls')))
+        urlpatterns.append(path(str(projet.slug) + '/', include(str(projet.app_name) + '.urls')))
     except:
         print("Unexpected error:", sys.exc_info()[0])

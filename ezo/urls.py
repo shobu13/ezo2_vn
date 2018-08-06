@@ -17,12 +17,17 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf import settings
 from django.urls import path
+from django.shortcuts import render
 
 from ezo import views
 
-
 urlpatterns = [
     path('', views.ezo_home, name='ezo_home'),
+    path('galerie', views.ezo_galerie, name='ezo_galerie'),
+    path('histoire', views.ezo_histoire, name='ezo_histoire'),
+    path('info', views.ezo_info, name='ezo_info'),
+    path('personnages', views.ezo_personnages, name='ezo_personnages'),
+    path('special', views.ezo_special, name='ezo_special'),
 ]
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
