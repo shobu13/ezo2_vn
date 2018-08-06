@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="{% static 'ezo/css/index.css' %}">
+    <script src="{% static 'ezo/js/jquery.js' %}"></script>
+    <title>Personnages</title>
+</head>
+<body>
+    <header>
+        <div class="menu">
+            <a href="{% url 'ezo_home' %}">
+                <img src="{% static 'ezo/img/menu/meijiyuri_accueil_off.png' %}" alt="accueil">
+            </a>
+            <a href="{% url 'ezo_histoire' %}">
+                <img id="histoire" src="{% static 'ezo/img/menu/meijiyuri_histoire_off.png' %}" alt="histoire">
+            </a>
+            <a href="{% url 'ezo_personnages' %}">
+                <img id="perso" src="{% static 'ezo/img/menu/meijiyuri_perso_on.png' %}" alt="personnages">
+            </a>
+            <a href="{% url 'ezo_galerie' %}">
+                <img id="galerie" src="{% static 'ezo/img/menu/meijiyuri_galerie_off.png' %}" alt="galerie">
+            </a>
+            <a href="{% url 'ezo_special' %}">
+                <img id="special" src="{% static 'ezo/img/menu/meijiyuri_special_off.png' %}" alt="special">
+            </a>
+            <a href="{% url 'ezo_info' %}">
+                <img id="info" src="{% static 'ezo/img/menu/meijiyuri_info_off.png' %}" alt="info">
+            </a>
+        </div>
+    </header>
+        <div class="persoaffi">
+            <div></div>
+            <div class="">
+                <img id="profperso" src="{% static 'ezo/img/perso/ezo_profile.png' %}" alt="profil" width="1100">
+            </div>
+            <div class="choix-perso">
+                <span id="ezocl">
+                    <img id="ezoim" src="{% static 'ezo/img/perso/ezo_on.png' %}" alt="ezo">
+                </span>
+                <span id="rancl">
+                    <img id="ranim" src="{% static 'ezo/img/perso/ran_off.png' %}" alt="ran">
+                </span>
+                <span id="seicl">
+                    <img id="seiim" src="{% static 'ezo/img/perso/sei_off.png' %}" alt="sei">
+                </span>
+                <span id="tsugucl">
+                    <img id="tsuguim" src="{% static 'ezo/img/perso/tsugu_off.png' %}" alt="tsugu">
+                </span>
+                <span id="akiecl">
+                    <img id="akieim" src="{% static 'ezo/img/perso/akie_off.png' %}" alt="eakie">
+                </span>
+                <span id="yoshicl">
+                    <img id="yoshiim" src="{% static 'ezo/img/perso/yoshi_off.png' %}" alt="yoshi">
+                </span>
+                <span id="clacl">
+                    <img id="claim" src="{% static 'ezo/img/perso/cla_off.png' %}" alt="cla">
+                </span>
+            </div>
+        </div>
+</body>
+<script src="{% static 'ezo/js/perso.js' %}"></script>
+</html>
