@@ -1,42 +1,87 @@
+@font-face {
+    font-family: "Redressed";
+    src: url("../police/Redressed.ttf") format("truetype");
+    scr: url("../police/Redressed.ttf") format("truetype"),
+
+}
+
+@-moz-keyframes anim
+{
+    0%  {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-webkit-keyframes anim
+{
+    0%  {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-o-keyframes anim
+{
+    0%  {opacity:0;}
+    100% {opacity:1;}
+}
+
+@-ms-keyframes anim
+{
+    0%  {opacity:0;}
+    100% {opacity:1;}
+}
+
+@keyframes anim
+{
+    0%  {opacity:0;}
+    100% {opacity:1;}
+}
+
+
+
+
+@-moz-keyframes bientot
+{
+    0%  {opacity:1;}
+    50% {opacity:0;}
+    100%  {opacity:1;}
+}
+
+@-webkit-keyframes bientot
+{
+    0%  {opacity:1;}
+    50% {opacity:0;}
+    100%  {opacity:1;}
+}
+
+@-o-keyframes bientot
+{
+    0%  {opacity:1;}
+    50% {opacity:0;}
+    100%  {opacity:1;}
+}
+
+@-ms-keyframes bientot
+{
+    0%  {opacity:1;}
+    50% {opacity:0;}
+    100%  {opacity:1;}
+}
+
+@keyframes bientot
+{
+    0%  {opacity:1;}
+    50% {opacity:0;}
+    100%  {opacity:1;}
+}
+
 body
 {
     margin: 0;
     padding: 0;
-    background-image: url("/static/ezo/img/meiji_site_pattern.png");
+    background-image: url("../img/meiji_site_pattern.png");
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     background-repeat: repeat;
-}
-
-@-moz-keyframes anim 
-{
-    0%  {opacity:0;}
-    100% {opacity:1;}
-}
-
-@-webkit-keyframes anim 
-{
-    0%  {opacity:0;}
-    100% {opacity:1;}
-}
-
-@-o-keyframes anim 
-{
-    0%  {opacity:0;}
-    100% {opacity:1;}
-}
-
-@-ms-keyframes anim 
-{
-    0%  {opacity:0;}
-    100% {opacity:1;}
-}
-
-@keyframes anim 
-{
-    0%  {opacity:0;}
-    100% {opacity:1;}
 }
 
 header
@@ -108,7 +153,7 @@ img
 .persoaffi
 {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     justify-content: space-between;
     position: relative;
 }
@@ -138,4 +183,64 @@ span
 span img
 {
     width: 125px
+}
+
+.perso-off
+{
+    filter: grayscale(100%);
+}
+
+span a:hover .perso-off
+{
+    filter: none;
+}
+
+.select-perso
+{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity:0;
+    -moz-animation: anim 0.5s linear forwards 0.1s;
+    -webkit-animation: anim 0.5s linear forwards 0.1s;
+    -o-animation: anim 0.5s linear forwards 0.1s;
+    -ms-animation: anim 0.5s linear forwards 0.1s;
+    animation: anim 0.5s linear forwards 0.1s;
+}
+
+.select-perso a
+{
+    margin: 20px 20px 0px 20px;
+}
+
+.bientot
+{
+    display: flex;
+    justify-content: center;
+}
+
+.bientot p
+{
+    font-family: Redressed;
+    font-size: 10em;
+    padding: 0;
+    margin: 0;
+    -moz-animation: bientot 3s linear forwards 1s infinite;
+    -webkit-animation: bientot 3s linear forwards 1s infinite;
+    -o-animation: bientot 3s linear forwards 1s infinite;
+    -ms-animation: bientot 3s linear forwards 1s infinite;
+    animation: bientot 3s linear forwards 1s infinite;
+}
+
+.config
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.2em;
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+}
+.config-1
+{
 }

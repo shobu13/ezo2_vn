@@ -9,6 +9,7 @@
     <meta http-equiv="cache-control" content="no-cache">
     <meta name="description" content="" />
     <link rel="stylesheet" href="{% static 'ezo/css/index.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'ezo/img/ezo_nyan.png' %}" />
     <script src="{% static 'ezo/js/jquery.js' %}"></script>
     <title>Personnages</title>
 </head>
@@ -35,35 +36,30 @@
             </a>
         </div>
     </header>
-        <div class="persoaffi">
-            <div></div>
-            <div class="">
-                <img id="profperso" src="{% static 'ezo/img/perso/ezo_profile.png' %}" alt="profil" width="1100">
-            </div>
-            <div class="choix-perso">
-                <span id="ezocl">
-                    <img id="ezoim" src="{% static 'ezo/img/perso/ezo_on.png' %}" alt="ezo">
-                </span>
-                <span id="rancl">
-                    <img id="ranim" src="{% static 'ezo/img/perso/ran_off.png' %}" alt="ran">
-                </span>
-                <span id="seicl">
-                    <img id="seiim" src="{% static 'ezo/img/perso/sei_off.png' %}" alt="sei">
-                </span>
-                <span id="tsugucl">
-                    <img id="tsuguim" src="{% static 'ezo/img/perso/tsugu_off.png' %}" alt="tsugu">
-                </span>
-                <span id="akiecl">
-                    <img id="akieim" src="{% static 'ezo/img/perso/akie_off.png' %}" alt="eakie">
-                </span>
-                <span id="yoshicl">
-                    <img id="yoshiim" src="{% static 'ezo/img/perso/yoshi_off.png' %}" alt="yoshi">
-                </span>
-                <span id="clacl">
-                    <img id="claim" src="{% static 'ezo/img/perso/cla_off.png' %}" alt="cla">
-                </span>
-            </div>
+        <div class="select-perso">
+            <a href="{% url 'ezo_personnages' 'ezo' %}">
+                <img src="{% static 'ezo/img/img-perso/avat_ezo.png' %}" width="250px" height="250px" alt="avat_ezo">
+            </a>
+            <a href="{% url 'ezo_personnages' 'ran' %}">
+                <img src="{% static 'ezo/img/img-perso/avat_ran.png' %}" width="250px" height="250px" alt="avat_ran">
+            </a>
+            <a href="{% url 'ezo_personnages' 'sei' %}">
+                <img src="{% static 'ezo/img/img-perso/avat_sei.png' %}" width="250px" height="250px" alt="avat_sei">
+            </a>
+            <a href="{% url 'ezo_personnages' 'tsugumi' %}">
+                <img src="{% static 'ezo/img/img-perso/avat_tsugu.png' %}" width="250px" height="250px" alt="avat_tsugu">
+            </a>
+            <a href="{% url 'ezo_personnages' 'akie' %}">
+                <img src="{% static 'ezo/img/img-perso/avat_akie.png' %}" width="250px" height="250px" alt="avat_akie">
+            </a>
+            <a href="{% url 'ezo_personnages' 'yoshino' %}">
+                <img src="{% static 'ezo/img/img-perso/avat_yoshi.png' %}" width="250px" height="250px" alt="avat_yoshi">
+            </a>
+            <a href="{% url 'ezo_personnages' 'clateau' %}">
+                <img src="{% static 'ezo/img/img-perso/avat_cla.png' %}" width="250px" height="250px" alt="avat_cla">
+            </a>
+
         </div>
 </body>
-<script src="{% static 'ezo/js/perso.js' %}"></script>
+<script src="{% static 'ezo/js/personnages.js' %}"></script>
 </html>
