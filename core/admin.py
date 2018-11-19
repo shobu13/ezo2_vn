@@ -3,7 +3,10 @@ from django.core.management import call_command
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from core.models import Projet, Membre
+from core.models import *
+
+import os
+import shutil
 
 import os
 import shutil
@@ -75,3 +78,4 @@ class ProjetAdmin(admin.ModelAdmin):
 
 admin.site.register(Projet, ProjetAdmin)
 admin.site.register(Membre)
+admin.site.register(Config)
