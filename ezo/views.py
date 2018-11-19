@@ -19,7 +19,9 @@ def ezo_info(request):
     return render(request, 'ezo/info.html', locals())
 
 
-def ezo_personnages(request):
+def ezo_personnages(request, perso=None):
+    if perso:
+        return render(request, 'ezo/perso/{}.html'.format(perso), locals())
     return render(request, 'ezo/personnages.html', locals())
 
 

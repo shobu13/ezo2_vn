@@ -27,6 +27,7 @@ urlpatterns = [
     path('histoire', views.ezo_histoire, name='ezo_histoire'),
     path('info', views.ezo_info, name='ezo_info'),
     path('personnages', views.ezo_personnages, name='ezo_personnages'),
+    path('personnages/<slug:perso>', views.ezo_personnages, name='ezo_personnages'),
     path('special', views.ezo_special, name='ezo_special'),
 ]
 urlpatterns += staticfiles_urlpatterns()
