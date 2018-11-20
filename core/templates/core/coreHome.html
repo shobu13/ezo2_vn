@@ -42,6 +42,16 @@
             }
         }
 
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+
         /*color to the text*/
         .card-tabs .tabs .tab a {
             color: {{ projet_phare.couleur_tab_texte }};
@@ -374,12 +384,13 @@
     </ul>
 </div>
 
-
-<div class="row">
-    <div class="col s4 offset-s4" style="position: fixed; bottom: 0;">
-        <img src="{% static 'core/img/ezo_bannierebis.png' %}" class="responsive-img">
+<footer class="page-footer">
+    <div class="row">
+        <div class="col s4 offset-s4" style="position: fixed; bottom: 0;">
+            <img src="{% static 'core/img/ezo_bannierebis.png' %}" class="responsive-img">
+        </div>
     </div>
-</div>
+</footer>
 
 </div>
 <div id="avertissement">

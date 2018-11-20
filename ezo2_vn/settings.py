@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'pm9^1jzv%d#^9$gu&zux-nmv%2*wf3g03z*mz@hayl5-^u+er2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['vn.ezo2.eu']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -82,11 +82,8 @@ WSGI_APPLICATION = 'ezo2_vn.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ezo2_vn',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
