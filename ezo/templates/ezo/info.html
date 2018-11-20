@@ -5,60 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache"/>
     <meta http-equiv="cache-control" content="no-cache">
-    <meta name="description" content="" />
+    <meta name="description" content=""/>
     <link rel="stylesheet" href="{% static 'ezo/css/index.css' %}">
-    <link rel="icon" type="image/png" href="{% static 'ezo/img/ezo_nyan.png' %}" />
+    <link rel="icon" type="image/png" href="{% static 'ezo/img/ezo_nyan.png' %}"/>
     <script src="{% static 'ezo/js/jquery.js' %}"></script>
     <script src="{% static 'ezo/js/info.js' %}"></script>
     <title>Info</title>
 </head>
 <body>
-    <header>
-        <div class="menu">
-            <a href="{% url 'ezo_home' %}">
-                <img src="{% static 'ezo/img/menu/meijiyuri_accueil_off.png' %}" alt="accueil">
-            </a>
-            <a href="{% url 'ezo_histoire' %}">
-                <img id="histoire" src="{% static 'ezo/img/menu/meijiyuri_histoire_off.png' %}" alt="histoire">
-            </a>
-            <a href="{% url 'ezo_personnages' %}">
-                <img id="perso" src="{% static 'ezo/img/menu/meijiyuri_perso_off.png' %}" alt="personnages">
-            </a>
-            <a href="{% url 'ezo_galerie' %}">
-                <img id="galerie" src="{% static 'ezo/img/menu/meijiyuri_galerie_off.png' %}" alt="galerie">
-            </a>
-            <a href="{% url 'ezo_special' %}">
-                <img id="special" src="{% static 'ezo/img/menu/meijiyuri_special_off.png' %}" alt="special">
-            </a>
-            <a href="{% url 'ezo_info' %}">
-                <img id="info" src="{% static 'ezo/img/menu/meijiyuri_info_on.png' %}" alt="info">
-            </a>
-        </div>
-    </header>
-
-    <div class="config">
-        <div  class="config-1">
-            <h2>
-                Configuration minimum requise:
-            </h2>
-            <p>
-                <b> Système d'exploitation :</b> windows millenium ou plus <br>
-                <b> Mémoire vive :</b> 1 Go de RAM DDR2 <br>
-                <b> Processeur :</b> Processeur Quad Core Broadcom 2837 ARMv8 64bit 1,2 GHz <br>
-            </p>
-
-            <h2>
-                Téléchargements:
-            </h2>
-            <p>
-                <a href="https://drive.google.com/open?id=1Hlxgj9C2hi_oIs9GBk8pcHKrNRtDR4fS"><b> Windows</b></a><br/>
-                <a href="https://drive.google.com/open?id=1xM0RQ-QCq-QUMgNSGg0n6gMR8gFyVvhF"><b>Linux</b></a><br/>
-                <b>itch.io<br>
-            </p>
-        </div>
+<header>
+    <div class="menu">
+        <a href="{% url 'ezo_home' %}">
+            <img src="{% static 'ezo/img/menu/meijiyuri_accueil_off.png' %}" alt="accueil">
+        </a>
+        <a href="{% url 'ezo_histoire' %}">
+            <img id="histoire" src="{% static 'ezo/img/menu/meijiyuri_histoire_off.png' %}"
+                 alt="histoire">
+        </a>
+        <a href="{% url 'ezo_personnages' %}">
+            <img id="perso" src="{% static 'ezo/img/menu/meijiyuri_perso_off.png' %}"
+                 alt="personnages">
+        </a>
+        <a href="{% url 'ezo_galerie' %}">
+            <img id="galerie" src="{% static 'ezo/img/menu/meijiyuri_galerie_off.png' %}"
+                 alt="galerie">
+        </a>
+        <a href="{% url 'ezo_special' %}">
+            <img id="special" src="{% static 'ezo/img/menu/meijiyuri_special_off.png' %}"
+                 alt="special">
+        </a>
+        <a href="{% url 'ezo_info' %}">
+            <img id="info" src="{% static 'ezo/img/menu/meijiyuri_info_on.png' %}" alt="info">
+        </a>
     </div>
+</header>
+
+<div class="config">
+    <div class="config-1">
+        <h2>
+            Configuration minimum requise:
+        </h2>
+        <p>
+            <b> Système d'exploitation :</b> windows millenium ou plus <br>
+            <b> Mémoire vive :</b> 1 Go de RAM DDR2 <br>
+            <b> Processeur :</b> Processeur Quad Core Broadcom 2837 ARMv8 64bit 1,2 GHz <br>
+        </p>
+
+        <h2>
+            Téléchargements:
+        </h2>
+        <p>
+            <a href="https://drive.google.com/open?id=1Hlxgj9C2hi_oIs9GBk8pcHKrNRtDR4fS"><b>
+                Windows</b></a><br/>
+            <a href="https://drive.google.com/open?id=1xM0RQ-QCq-QUMgNSGg0n6gMR8gFyVvhF"><b>Linux</b></a><br/>
+            <a href="https://ezo2.itch.io/meiji-wa-yuri"><b>itch.io</b><br/></a>
+        </p>
+    </div>
+</div>
 
 </body>
 </html>
